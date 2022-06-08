@@ -1,0 +1,9 @@
+<%-include("partials/header") -%>
+<h1>Home</h1>
+<p><%= homeContent %></p>
+<% posts.forEach((post)=> { %>
+<%  ref = "/posts/"+post.title %>
+  <h3><%=post.title%></h3>
+  <p><%= post.body.slice(0,100) + "..." %><a href="/posts/<%=post.title%>">Read More</a></p>
+<% }); %>
+<%- include("partials/footer") -%>
